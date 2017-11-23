@@ -32,6 +32,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'devise'
+gem 'jquery-turbolinks'
+gem 'bootstrap-sass'
+gem 'jquery-rails'
 
 gem 'webpacker', '~> 3.0'
 
