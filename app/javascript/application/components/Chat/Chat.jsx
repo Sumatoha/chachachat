@@ -8,6 +8,7 @@ class Chat extends React.Component {
     this.state = {
       messages: props.messages,
       sendMessage: props.sendMessage,
+      createConversation: props.createConversation,
     }
 
     bindAll(this, [
@@ -20,6 +21,7 @@ class Chat extends React.Component {
       <div>
         <p>This is ChaChaChat</p>
         <button onClick={this.state.sendMessage}>Send</button>
+        <button onClick={() => this.state.createConversation({name: 'test'})}>Create Conversation</button>
       </div>
     );
   }
@@ -27,6 +29,7 @@ class Chat extends React.Component {
 Chat.propTypes = {
   messages: PropTypes.array.isRequired,
   sendMessage: PropTypes.func.isRequired,
+  createConversation: PropTypes.func.isRequired,
 };
 
 export default Chat;
