@@ -34,6 +34,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem "pundit"
+gem 'active_model_serializers', '0.9.3'
 
 gem 'webpacker', '~> 3.0'
 
