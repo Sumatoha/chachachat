@@ -1,8 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Chat from './components/Chat/Chat';
+import ChatContainer from './containers/ChatContainer';
+import store from './store/store';
+import { Provider } from 'react-redux';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const container = document.body.appendChild(document.createElement('div'));
-  render(<Chat/>, container);
+  render(
+    <Provider store={store}>
+        <ChatContainer/>
+    </Provider>,
+    document.getElementById('root')
+  )
 });

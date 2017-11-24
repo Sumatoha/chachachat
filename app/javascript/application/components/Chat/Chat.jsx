@@ -1,9 +1,32 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { bindAll } from 'lodash';
 
-export default class Chat extends React.Component {
+class Chat extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      messages: props.messages,
+      sendMessage: props.sendMessage,
+    }
+
+    bindAll(this, [
+
+    ]);
+  }
+
   render() {
     return (
-      <h1>Hi, I'm ChaChaChat!</h1>
+      <div>
+        <p>This is ChaChaChat</p>
+        <button onClick={this.state.sendMessage}>Send</button>
+      </div>
     );
   }
 }
+Chat.propTypes = {
+  messages: PropTypes.array.isRequired,
+  sendMessage: PropTypes.func.isRequired,
+};
+
+export default Chat;
