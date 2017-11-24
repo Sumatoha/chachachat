@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem "pundit"
 
 gem 'webpacker', '~> 3.0'
 
