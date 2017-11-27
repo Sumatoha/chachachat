@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   namespace :api do
-    resources :conversations, only: [:create]
+    resources :conversations, only: [:create, :index]
   end
 end

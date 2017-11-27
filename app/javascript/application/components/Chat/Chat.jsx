@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { bindAll } from 'lodash';
+import ConversationsListContainer from '../../containers/ConversationsListContainer';
 
 class Chat extends React.Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class Chat extends React.Component {
     return (
       <div>
         <p>This is ChaChaChat</p>
+        <ConversationsListContainer />
         <button onClick={this.state.sendMessage}>Send</button>
         <button onClick={() => this.state.createConversation({name: 'test'})}>Create Conversation</button>
       </div>
