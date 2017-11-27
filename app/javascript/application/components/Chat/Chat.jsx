@@ -1,9 +1,37 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { bindAll } from 'lodash';
+import ConversationsListContainer from '../../containers/ConversationsListContainer';
 
-export default class Chat extends React.Component {
+class Chat extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      messages: props.messages,
+      sendMessage: props.sendMessage,
+      createConversation: props.createConversation,
+    }
+
+    bindAll(this, [
+
+    ]);
+  }
+
   render() {
     return (
-      <h1>Hi, I'm ChaChaChat!</h1>
+      <div>
+        <p>This is ChaChaChat</p>
+        <ConversationsListContainer />
+        <button onClick={this.state.sendMessage}>Send</button>
+        <button onClick={() => this.state.createConversation({name: 'test'})}>Create Conversation</button>
+      </div>
     );
   }
 }
+Chat.propTypes = {
+  messages: PropTypes.array.isRequired,
+  sendMessage: PropTypes.func.isRequired,
+  createConversation: PropTypes.func.isRequired,
+};
+
+export default Chat;
